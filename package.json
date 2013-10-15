@@ -1,0 +1,27 @@
+{
+  "name": "modern-sabahlar",
+  "version": "0.0.0",
+  "description": "Alternative Radio Paradise App",
+  "main": "index.js",
+  "scripts": {
+    "test": "fox"
+  },
+  "dependencies": {
+    "domquery": "*",
+    "play-audio": "*",
+    "jsonp": "0.0.3",
+    "new-format": "0.0.1",
+    "pad-date": "0.0.0"
+  },
+  "devDependencies": {
+    "stylus": "*",
+    "one": "*"
+  },
+  "keywords": [],
+  "repository": {
+    "url": "git@github.com:azer/modern-sabahlar.git",
+    "type": "git"
+  },
+  "author": "Azer Koçulu <azer@kodfabrik.com>",
+  "license": "BSD"
+}

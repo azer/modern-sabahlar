@@ -1,0 +1,22 @@
+bundle = bin 'one/onejs'
+stylus = bin 'stylus'
+jsify = bin 'jsify'
+
+all 'dist/index.html', 'dist/modern-sabahlar.js', 'dist/modern-sabahlar.css'
+
+target 'dist/index.html', 'index.html', ->
+    debug 'Building dist/modern-sabahlar.js'
+    cp '-f', 'index.html', 'dist/index.html'
+
+target 'dist/modern-sabahlar.js', '*.js', 'lib/*.js', 'node_modules', 'components', ->
+    debug 'Building dist/modern-sabahlar.js'
+    bundle "index.js -o dist/modern-sabahlar.js"
+
+target 'dist/modern-sabahlar.css', 'modern-sabahlar.styl', ->
+    debug 'Building dist/modern-sabahlar.css'
+    stylus "modern-sabahlar.styl -o dist/"
+    cp 'fonts.css dist/.'
+
+task 'deploy', ->
+    mkdir '-p', 'prod'
+    cp '-rf', 'dist/*', 'prod/.'

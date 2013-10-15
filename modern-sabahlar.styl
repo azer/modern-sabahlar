@@ -1,0 +1,109 @@
+@import "fonts.css"
+
+frame()
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+
+center()
+  display -ms-flexbox
+  -ms-flex-pack center
+  -ms-flex-align center
+
+  display -moz-box
+  -moz-box-pack center
+  -moz-box-align center
+
+  display  -webkit-box
+  -webkit-box-pack center
+  -webkit-box-align center
+
+cover(src)
+  frame()
+  position fixed
+  z-index 1
+  background url(src) no-repeat center bottom
+  background-size cover
+
+html, body
+  margin 0
+  padding 0
+  width 100%
+  height 100%
+
+body
+  background #666
+  font 12px Helvetica, Arial, sans-serif
+
+.cover
+  cover("http://farm6.staticflickr.com/5321/9900843084_1fc9f29dd9_h.jpg")
+
+
+.container
+  frame()
+  z-index 2
+  -moz-box-orient: vertical;
+
+h1, ul
+  margin 0
+  padding 0
+
+h1
+  font 700 18px/1.2 "playfair display"
+  color rgba(255, 255, 255, 0.9)
+  cursor default
+  margin 20px 0
+
+h1 .controls, h1.playing .title
+  display none
+
+h1.playing .controls
+  display inline
+
+h1 .toggle
+  cursor pointer
+
+h1 .controls, h1 .title
+  background rgba(255, 155, 0, 0.2)
+  padding 3px 10px
+
+h1 .controls
+  background rgba(255, 55, 0, 0.2)
+
+ul
+  display block
+  list-style none
+  padding 100px 200px
+  font italic 700 14px/1.2 "playfair display"
+  color #fff
+
+ul li
+  margin-bottom 20px
+
+ul li span
+  padding 5px 10px
+  margin-bottom 10px
+  background rgba(255, 0, 255, 0.01)
+  cursor pointer
+
+ul li span:hover
+  background rgba(0, 155, 155, 0.2)
+  cursor pointer
+
+.footer
+  padding 50px 200px
+  color #fff
+  font 14px  Georgia, Arial, sans-serif
+
+.footer a
+  color #fff
+  text-decoration none
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px)
+  h1
+    font 700 14px/1.2 "playfair display"
+
+  ul, .footer
+    padding 50px 30px
